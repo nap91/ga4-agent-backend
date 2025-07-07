@@ -1,9 +1,12 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
+
+app.use(cors()); // Allow all origins for now
 app.use(express.json());
 
 app.post('/generate-ga4', async (req, res) => {
